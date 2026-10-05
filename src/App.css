@@ -1,9 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
 
-
-/* ==================================================
+/* =========================
    GLOBAL
-================================================== */
+========================= */
 
 * {
   margin: 0;
@@ -46,9 +45,9 @@ a {
 }
 
 
-/* ==================================================
+/* =========================
    NAVIGATION
-================================================== */
+========================= */
 
 .navbar {
   position: absolute;
@@ -58,7 +57,6 @@ a {
 
   width: 100%;
   height: 92px;
-
   padding: 0 7%;
 
   display: flex;
@@ -81,7 +79,6 @@ a {
 
   font-size: 28px;
   font-weight: 900;
-
   letter-spacing: -1px;
 }
 
@@ -94,7 +91,6 @@ a {
 
   font-size: 11px;
   font-weight: 800;
-
   letter-spacing: 3px;
 }
 
@@ -121,14 +117,12 @@ a {
   padding: 14px 22px;
 
   background: #e10600;
-
   color: #ffffff;
 
   border: 1px solid #e10600;
 
   font-size: 12px;
   font-weight: 800;
-
   letter-spacing: 1px;
 
   transition: all 0.25s ease;
@@ -141,9 +135,9 @@ a {
 }
 
 
-/* ==================================================
-   SHARED
-================================================== */
+/* =========================
+   GENERAL
+========================= */
 
 .section-label {
   margin-bottom: 24px;
@@ -152,7 +146,6 @@ a {
 
   font-size: 14px;
   font-weight: 800;
-
   letter-spacing: 3px;
 }
 
@@ -163,16 +156,15 @@ a {
 
   font-size: 13px;
   font-weight: 800;
-
   letter-spacing: 1.3px;
 
   transition: all 0.25s ease;
 }
 
 
-/* ==================================================
+/* =========================
    HERO
-================================================== */
+========================= */
 
 .hero {
   position: relative;
@@ -247,7 +239,6 @@ a {
 
   font-size: 14px;
   font-weight: 800;
-
   letter-spacing: 3px;
 }
 
@@ -257,7 +248,6 @@ a {
   color: #ffffff;
 
   font-size: clamp(70px, 9vw, 140px);
-
   line-height: 0.9;
 
   letter-spacing: -7px;
@@ -277,7 +267,6 @@ a {
   color: #d2d2d2;
 
   font-size: 17px;
-
   line-height: 1.9;
 }
 
@@ -316,6 +305,7 @@ a {
 
   display: flex;
   align-items: center;
+
   gap: 18px;
 }
 
@@ -333,14 +323,13 @@ a {
   font-weight: 700;
 
   line-height: 1.9;
-
   letter-spacing: 2px;
 }
 
 
-/* ==================================================
+/* =========================
    INTRO
-================================================== */
+========================= */
 
 .intro {
   width: 100%;
@@ -358,7 +347,6 @@ a {
   color: #111111;
 
   font-size: clamp(50px, 6vw, 85px);
-
   line-height: 1;
 
   letter-spacing: -5px;
@@ -374,14 +362,13 @@ a {
   color: #555555;
 
   font-size: 17px;
-
   line-height: 1.9;
 }
 
 
-/* ==================================================
+/* =========================
    VEHICLES
-================================================== */
+========================= */
 
 .vehicles {
   width: 100%;
@@ -403,7 +390,6 @@ a {
   color: #111111;
 
   font-size: clamp(45px, 5vw, 70px);
-
   line-height: 1;
 
   letter-spacing: -4px;
@@ -418,14 +404,8 @@ a {
   letter-spacing: 1.5px;
 }
 
-
-/* ==================================================
-   SEARCH & FILTERS
-================================================== */
-
 .vehicle-controls {
   margin-bottom: 55px;
-
   padding: 20px;
 
   display: flex;
@@ -442,6 +422,7 @@ a {
 .vehicle-filters {
   display: flex;
   flex-wrap: wrap;
+
   gap: 8px;
 }
 
@@ -449,7 +430,6 @@ a {
   padding: 12px 18px;
 
   background: #f1f1f1;
-
   color: #555555;
 
   cursor: pointer;
@@ -482,7 +462,6 @@ a {
   padding: 13px 16px;
 
   background: #ffffff;
-
   color: #111111;
 
   border: 1px solid #cccccc;
@@ -501,9 +480,9 @@ a {
 }
 
 
-/* ==================================================
-   VEHICLE GRID
-================================================== */
+/* =========================
+   VEHICLE CARDS
+========================= */
 
 .vehicle-grid {
   display: grid;
@@ -526,7 +505,8 @@ a {
 .vehicle-card:hover {
   transform: translateY(-8px);
 
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.12);
 }
 
 .vehicle-image {
@@ -561,6 +541,7 @@ a {
 
 .vehicle-number {
   position: absolute;
+
   top: 18px;
   right: 18px;
 
@@ -576,6 +557,7 @@ a {
 
 .vehicle-status {
   position: absolute;
+
   top: 18px;
   left: 18px;
 
@@ -616,7 +598,6 @@ a {
   padding: 6px 9px;
 
   background: #111111;
-
   color: #ffffff;
 
   font-size: 10px;
@@ -631,7 +612,6 @@ a {
   color: #111111;
 
   font-size: 28px;
-
   line-height: 1.2;
 
   font-weight: 800;
@@ -642,6 +622,7 @@ a {
 
   display: flex;
   flex-wrap: wrap;
+
   gap: 12px;
 }
 
@@ -725,7 +706,6 @@ a {
   padding: 12px 16px;
 
   background: #111111;
-
   color: #ffffff;
 
   cursor: pointer;
@@ -743,9 +723,9 @@ a {
 }
 
 
-/* ==================================================
+/* =========================
    NO RESULTS
-================================================== */
+========================= */
 
 .no-results {
   padding: 80px 20px;
@@ -775,7 +755,6 @@ a {
   padding: 13px 20px;
 
   background: #111111;
-
   color: #ffffff;
 
   cursor: pointer;
@@ -791,9 +770,9 @@ a {
 }
 
 
-/* ==================================================
+/* =========================
    SERVICES
-================================================== */
+========================= */
 
 .services {
   width: 100%;
@@ -811,7 +790,6 @@ a {
   color: #ffffff;
 
   font-size: clamp(55px, 7vw, 95px);
-
   line-height: 0.95;
 
   letter-spacing: -6px;
@@ -854,14 +832,13 @@ a {
   color: #b8b8b8;
 
   font-size: 16px;
-
   line-height: 1.8;
 }
 
 
-/* ==================================================
+/* =========================
    ABOUT
-================================================== */
+========================= */
 
 .about {
   width: 100%;
@@ -881,7 +858,6 @@ a {
   color: #111111;
 
   font-size: clamp(50px, 6vw, 80px);
-
   line-height: 0.95;
 
   letter-spacing: -5px;
@@ -895,14 +871,13 @@ a {
   color: #555555;
 
   font-size: 17px;
-
   line-height: 2;
 }
 
 
-/* ==================================================
+/* =========================
    CONTACT
-================================================== */
+========================= */
 
 .contact {
   width: 100%;
@@ -928,7 +903,6 @@ a {
   color: #ffffff;
 
   font-size: clamp(55px, 7vw, 105px);
-
   line-height: 0.9;
 
   letter-spacing: -6px;
@@ -937,11 +911,6 @@ a {
 .contact h2 span {
   color: #111111;
 }
-
-
-/* ==================================================
-   CONTACT INFORMATION
-================================================== */
 
 .enquiry-layout {
   max-width: 1200px;
@@ -969,7 +938,6 @@ a {
   color: rgba(255, 255, 255, 0.85);
 
   font-size: 17px;
-
   line-height: 1.9;
 }
 
@@ -1002,9 +970,9 @@ a {
 }
 
 
-/* ==================================================
+/* =========================
    ENQUIRY FORM
-================================================== */
+========================= */
 
 .enquiry-form {
   padding: 40px;
@@ -1020,11 +988,9 @@ a {
   padding: 15px 18px;
 
   background: #111111;
-
   color: #ffffff;
 
   font-size: 12px;
-
   line-height: 1.6;
 }
 
@@ -1065,7 +1031,6 @@ a {
   outline: none;
 
   background: #ffffff;
-
   color: #111111;
 
   font-size: 13px;
@@ -1116,7 +1081,6 @@ a {
 
 .submit-button {
   background: #111111;
-
   color: #ffffff;
 }
 
@@ -1126,7 +1090,6 @@ a {
 
 .whatsapp-form-button {
   background: #e10600;
-
   color: #ffffff;
 
   border: 1px solid #e10600;
@@ -1134,14 +1097,13 @@ a {
 
 .whatsapp-form-button:hover {
   background: #ffffff;
-
   color: #111111;
 }
 
 
-/* ==================================================
+/* =========================
    FOOTER
-================================================== */
+========================= */
 
 .footer {
   width: 100%;
@@ -1182,13 +1144,15 @@ a {
 }
 
 
-/* ==================================================
-   VEHICLE DETAILS MODAL
-================================================== */
+/* =========================
+   VEHICLE MODAL
+========================= */
 
 .vehicle-modal {
   position: fixed;
+
   inset: 0;
+
   z-index: 100;
 
   padding: 30px;
@@ -1206,6 +1170,7 @@ a {
   position: relative;
 
   width: min(1100px, 100%);
+
   max-height: 90vh;
 
   display: grid;
@@ -1214,29 +1179,31 @@ a {
 
   background: #ffffff;
 
-  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.45);
+  box-shadow:
+    0 30px 100px rgba(0, 0, 0, 0.45);
 }
 
 .modal-close {
   position: absolute;
+
   top: 15px;
   right: 15px;
+
   z-index: 5;
 
-  width: 42px;
-  height: 42px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 10px 14px;
 
   background: #111111;
-
   color: #ffffff;
 
   cursor: pointer;
 
-  font-size: 27px;
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  transition: background 0.25s ease;
 }
 
 .modal-close:hover {
@@ -1258,6 +1225,7 @@ a {
 .modal-image img {
   width: 100%;
   height: 100%;
+
   min-height: 520px;
 
   padding: 20px;
@@ -1291,7 +1259,6 @@ a {
   color: #111111;
 
   font-size: clamp(30px, 4vw, 48px);
-
   line-height: 1.05;
 
   letter-spacing: -2px;
@@ -1301,7 +1268,6 @@ a {
   padding: 8px 12px;
 
   background: #e10600;
-
   color: #ffffff;
 
   font-size: 10px;
@@ -1370,7 +1336,6 @@ a {
 
 .modal-call {
   background: #e10600;
-
   color: #ffffff;
 }
 
@@ -1380,7 +1345,6 @@ a {
 
 .modal-whatsapp {
   background: #111111;
-
   color: #ffffff;
 
   cursor: pointer;
@@ -1402,17 +1366,15 @@ a {
 
 .modal-enquire:hover {
   background: #111111;
-
   color: #ffffff;
 }
 
 
-/* ==================================================
+/* =========================
    TABLET
-================================================== */
+========================= */
 
 @media (max-width: 1000px) {
-
   .navbar {
     padding: 0 5%;
   }
@@ -1474,16 +1436,14 @@ a {
 
     text-align: center;
   }
-
 }
 
 
-/* ==================================================
+/* =========================
    MOBILE
-================================================== */
+========================= */
 
 @media (max-width: 650px) {
-
   .navbar {
     height: 75px;
   }
@@ -1683,5 +1643,3 @@ a {
   .modal-actions {
     grid-template-columns: 1fr;
   }
-
-}

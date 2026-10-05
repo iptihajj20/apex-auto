@@ -69,13 +69,11 @@ function App() {
 
   const filteredVehicles = vehicles.filter((vehicle) => {
     const matchesCategory =
-      activeFilter === "ALL" ||
-      vehicle.category === activeFilter;
+      activeFilter === "ALL" || vehicle.category === activeFilter;
 
-    const matchesSearch =
-      vehicle.name
-        .toLowerCase()
-        .includes(searchTerm.toLowerCase());
+    const matchesSearch = vehicle.name
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
 
     return matchesCategory && matchesSearch;
   });
@@ -91,9 +89,7 @@ function App() {
     setTimeout(() => {
       document
         .getElementById("contact")
-        ?.scrollIntoView({
-          behavior: "smooth",
-        });
+        ?.scrollIntoView({ behavior: "smooth" });
     }, 100);
   };
 
@@ -110,15 +106,12 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
     setSubmitted(true);
   };
 
   const sendWhatsAppEnquiry = (vehicle = null) => {
     const vehicleName =
-      vehicle?.name ||
-      formData.vehicle ||
-      "a vehicle";
+      vehicle?.name || formData.vehicle || "a vehicle";
 
     const message = `Hello Apex Auto,
 
@@ -131,9 +124,7 @@ Please share more details, availability and the next steps.
 Thank you.`;
 
     const whatsappUrl =
-      `https://wa.me/254115747135?text=${encodeURIComponent(
-        message
-      )}`;
+      `https://wa.me/254115747135?text=${encodeURIComponent(message)}`;
 
     window.open(whatsappUrl, "_blank");
   };
@@ -144,31 +135,36 @@ Thank you.`;
 I would like to make a vehicle enquiry.
 
 Name: ${formData.name}
+
 Phone: ${formData.phone}
+
 Email: ${formData.email}
+
 Vehicle: ${formData.vehicle}
+
 Buying Type: ${formData.buyingType}
 
 Message:
+
 ${formData.message}`;
 
     const whatsappUrl =
-      `https://wa.me/254115747135?text=${encodeURIComponent(
-        message
-      )}`;
+      `https://wa.me/254115747135?text=${encodeURIComponent(message)}`;
 
     window.open(whatsappUrl, "_blank");
+  };
+
+  const resetSearch = () => {
+    setSearchTerm("");
+    setActiveFilter("ALL");
   };
 
   return (
     <div className="app">
 
-      {/* ==================================================
-          NAVIGATION
-      ================================================== */}
+      {/* NAVIGATION */}
 
       <header className="navbar">
-
         <a href="#home" className="logo">
           <span>APEX</span>
           <small>AUTO</small>
@@ -185,20 +181,14 @@ ${formData.message}`;
         <a href="#contact" className="nav-button">
           GET IN TOUCH
         </a>
-
       </header>
-
 
       <main>
 
-        {/* ==================================================
-            HERO
-        ================================================== */}
+        {/* HERO */}
 
         <section className="hero" id="home">
-
           <div className="hero-content">
-
             <p className="eyebrow">
               RETAIL & WHOLESALE VEHICLES
             </p>
@@ -215,7 +205,6 @@ ${formData.message}`;
             </p>
 
             <div className="hero-actions">
-
               <a
                 href="#vehicles"
                 className="button button-primary"
@@ -229,14 +218,10 @@ ${formData.message}`;
               >
                 CONTACT US
               </a>
-
             </div>
-
           </div>
 
-
           <div className="hero-side">
-
             <span className="hero-line"></span>
 
             <p>
@@ -244,18 +229,12 @@ ${formData.message}`;
               <br />
               VEHICLES
             </p>
-
           </div>
-
         </section>
 
-
-        {/* ==================================================
-            INTRODUCTION
-        ================================================== */}
+        {/* INTRODUCTION */}
 
         <section className="intro">
-
           <p className="section-label">
             WHY APEX AUTO
           </p>
@@ -270,20 +249,13 @@ ${formData.message}`;
             Whether you're buying for personal use, business or resale,
             Apex Auto connects you with vehicles that match your needs.
           </p>
-
         </section>
 
-
-        {/* ==================================================
-            VEHICLES
-        ================================================== */}
+        {/* VEHICLES */}
 
         <section className="vehicles" id="vehicles">
-
           <div className="section-header">
-
             <div>
-
               <p className="section-label">
                 OUR COLLECTION
               </p>
@@ -291,21 +263,17 @@ ${formData.message}`;
               <h2>
                 Featured Vehicles
               </h2>
-
             </div>
 
             <p className="vehicle-count">
               {filteredVehicles.length} VEHICLE
               {filteredVehicles.length !== 1 ? "S" : ""}
             </p>
-
           </div>
-
 
           <div className="vehicle-controls">
 
             <div className="vehicle-filters">
-
               <button
                 type="button"
                 className={
@@ -341,12 +309,9 @@ ${formData.message}`;
               >
                 SEDAN
               </button>
-
             </div>
 
-
             <div className="vehicle-search">
-
               <input
                 type="text"
                 placeholder="Search vehicles..."
@@ -355,25 +320,19 @@ ${formData.message}`;
                   setSearchTerm(event.target.value)
                 }
               />
-
             </div>
-
           </div>
 
-
           {filteredVehicles.length > 0 ? (
-
             <div className="vehicle-grid">
 
               {filteredVehicles.map((vehicle) => (
-
                 <article
                   className="vehicle-card"
                   key={vehicle.id}
                 >
 
                   <div className="vehicle-image">
-
                     <img
                       src={vehicle.image}
                       alt={vehicle.name}
@@ -386,14 +345,11 @@ ${formData.message}`;
                     <span className="vehicle-status">
                       AVAILABLE
                     </span>
-
                   </div>
-
 
                   <div className="vehicle-content">
 
                     <div className="vehicle-category-row">
-
                       <span className="vehicle-category">
                         {vehicle.category}
                       </span>
@@ -401,17 +357,13 @@ ${formData.message}`;
                       <span className="stock-status">
                         IN STOCK
                       </span>
-
                     </div>
-
 
                     <h3>
                       {vehicle.name}
                     </h3>
 
-
                     <div className="vehicle-meta">
-
                       <span>
                         {vehicle.transmission}
                       </span>
@@ -423,9 +375,7 @@ ${formData.message}`;
                       <span>
                         {vehicle.seats}
                       </span>
-
                     </div>
-
 
                     <div className="vehicle-specs">
 
@@ -446,7 +396,6 @@ ${formData.message}`;
 
                     </div>
 
-
                     <div className="vehicle-footer">
 
                       <strong className="vehicle-price">
@@ -460,21 +409,16 @@ ${formData.message}`;
                           setSelectedVehicle(vehicle)
                         }
                       >
-                        VIEW DETAILS →
+                        VIEW DETAILS
                       </button>
 
                     </div>
-
                   </div>
-
                 </article>
-
               ))}
 
             </div>
-
           ) : (
-
             <div className="no-results">
 
               <h3>
@@ -482,29 +426,22 @@ ${formData.message}`;
               </h3>
 
               <p>
-                Try another vehicle name or select a different category.
+                Try another vehicle name or select
+                a different category.
               </p>
 
               <button
                 type="button"
-                onClick={() => {
-                  setSearchTerm("");
-                  setActiveFilter("ALL");
-                }}
+                onClick={resetSearch}
               >
                 RESET SEARCH
               </button>
 
             </div>
-
           )}
-
         </section>
 
-
-        {/* ==================================================
-            SERVICES
-        ================================================== */}
+        {/* SERVICES */}
 
         <section className="services" id="services">
 
@@ -518,66 +455,61 @@ ${formData.message}`;
             your needs.
           </h2>
 
-
           <div className="service-list">
 
             <div className="service-item">
-
               <span>01</span>
 
               <div>
-                <h3>Vehicle Sales</h3>
+                <h3>
+                  Vehicle Sales
+                </h3>
 
                 <p>
-                  Quality vehicles for individual and business buyers.
+                  Quality vehicles for individual
+                  and business buyers.
                 </p>
               </div>
-
             </div>
 
-
             <div className="service-item">
-
               <span>02</span>
 
               <div>
-                <h3>Wholesale</h3>
+                <h3>
+                  Wholesale
+                </h3>
 
                 <p>
-                  Vehicle solutions for dealers and resellers.
+                  Vehicle solutions for dealers
+                  and resellers.
                 </p>
               </div>
-
             </div>
 
-
             <div className="service-item">
-
               <span>03</span>
 
               <div>
-                <h3>Vehicle Sourcing</h3>
+                <h3>
+                  Vehicle Sourcing
+                </h3>
 
                 <p>
-                  We'll help you find a vehicle that fits your requirements.
+                  We'll help you find a vehicle
+                  that fits your requirements.
                 </p>
               </div>
-
             </div>
 
           </div>
-
         </section>
 
-
-        {/* ==================================================
-            ABOUT
-        ================================================== */}
+        {/* ABOUT */}
 
         <section className="about" id="about">
 
           <div className="about-heading">
-
             <p className="section-label">
               ABOUT APEX AUTO
             </p>
@@ -585,23 +517,19 @@ ${formData.message}`;
             <h2>
               Drive with confidence.
             </h2>
-
           </div>
 
-
           <p className="about-description">
-            Apex Auto is a modern vehicle dealership focused on providing
-            dependable vehicles and a straightforward buying experience.
-            From individual buyers to wholesale clients, we make the process
-            simple.
+            Apex Auto is a modern vehicle dealership
+            focused on providing dependable vehicles
+            and a straightforward buying experience.
+            From individual buyers to wholesale clients,
+            we make the process simple.
           </p>
 
         </section>
 
-
-        {/* ==================================================
-            CONTACT
-        ================================================== */}
+        {/* CONTACT */}
 
         <section className="contact" id="contact">
 
@@ -619,39 +547,42 @@ ${formData.message}`;
 
           </div>
 
-
           <div className="enquiry-layout">
 
             <div className="contact-info">
 
               <p className="contact-intro">
-                Tell us what you're looking for and our team
-                will get back to you with the right options.
+                Tell us what you're looking for and
+                our team will get back to you with
+                the right options.
               </p>
-
 
               <div className="contact-details">
 
                 <div>
-                  <small>CALL / WHATSAPP</small>
+                  <small>
+                    CALL / WHATSAPP
+                  </small>
 
                   <a href="tel:+254115747135">
                     0115747135
                   </a>
                 </div>
 
-
                 <div>
-                  <small>BUSINESS TYPE</small>
+                  <small>
+                    BUSINESS TYPE
+                  </small>
 
                   <p>
                     Retail & Wholesale
                   </p>
                 </div>
 
-
                 <div>
-                  <small>LOCATION</small>
+                  <small>
+                    LOCATION
+                  </small>
 
                   <p>
                     Kenya
@@ -659,9 +590,9 @@ ${formData.message}`;
                 </div>
 
               </div>
-
             </div>
 
+            {/* ENQUIRY FORM */}
 
             <form
               className="enquiry-form"
@@ -669,22 +600,16 @@ ${formData.message}`;
             >
 
               {submitted && (
-
                 <div className="success-message">
-
-                  Your enquiry is ready.
-                  Click the WhatsApp button below
-                  to send it directly to Apex Auto.
-
+                  Your enquiry is ready. Click the
+                  WhatsApp button below to send it
+                  directly to Apex Auto.
                 </div>
-
               )}
-
 
               <div className="form-row">
 
                 <div className="form-field">
-
                   <label htmlFor="name">
                     FULL NAME
                   </label>
@@ -698,12 +623,9 @@ ${formData.message}`;
                     onChange={handleInputChange}
                     required
                   />
-
                 </div>
 
-
                 <div className="form-field">
-
                   <label htmlFor="phone">
                     PHONE NUMBER
                   </label>
@@ -717,11 +639,9 @@ ${formData.message}`;
                     onChange={handleInputChange}
                     required
                   />
-
                 </div>
 
               </div>
-
 
               <div className="form-field">
 
@@ -741,7 +661,6 @@ ${formData.message}`;
 
               </div>
 
-
               <div className="form-row">
 
                 <div className="form-field">
@@ -757,26 +676,21 @@ ${formData.message}`;
                     onChange={handleInputChange}
                     required
                   >
-
                     <option value="">
                       Select a vehicle
                     </option>
 
                     {vehicles.map((vehicle) => (
-
                       <option
                         key={vehicle.id}
                         value={vehicle.name}
                       >
                         {vehicle.name}
                       </option>
-
                     ))}
-
                   </select>
 
                 </div>
-
 
                 <div className="form-field">
 
@@ -790,7 +704,6 @@ ${formData.message}`;
                     value={formData.buyingType}
                     onChange={handleInputChange}
                   >
-
                     <option value="Retail">
                       Retail
                     </option>
@@ -798,13 +711,11 @@ ${formData.message}`;
                     <option value="Wholesale">
                       Wholesale
                     </option>
-
                   </select>
 
                 </div>
 
               </div>
-
 
               <div className="form-field">
 
@@ -824,14 +735,13 @@ ${formData.message}`;
 
               </div>
 
-
               <div className="form-buttons">
 
                 <button
                   type="submit"
                   className="submit-button"
                 >
-                  REVIEW ENQUIRY →
+                  REVIEW ENQUIRY
                 </button>
 
                 <button
@@ -839,34 +749,28 @@ ${formData.message}`;
                   className="whatsapp-form-button"
                   onClick={sendFormToWhatsApp}
                 >
-                  SEND VIA WHATSAPP →
+                  SEND VIA WHATSAPP
                 </button>
 
               </div>
 
             </form>
-
           </div>
-
         </section>
-
       </main>
 
-
-      {/* ==================================================
-          FOOTER
-      ================================================== */}
+      {/* FOOTER */}
 
       <footer className="footer">
 
         <div className="footer-brand">
-
-          <strong>APEX AUTO</strong>
+          <strong>
+            APEX AUTO
+          </strong>
 
           <span>
             RETAIL & WHOLESALE
           </span>
-
         </div>
 
         <p>
@@ -879,13 +783,9 @@ ${formData.message}`;
 
       </footer>
 
-
-      {/* ==================================================
-          VEHICLE DETAILS MODAL
-      ================================================== */}
+      {/* VEHICLE DETAILS MODAL */}
 
       {selectedVehicle && (
-
         <div
           className="vehicle-modal"
           onClick={closeVehicleDetails}
@@ -904,9 +804,8 @@ ${formData.message}`;
               onClick={closeVehicleDetails}
               aria-label="Close vehicle details"
             >
-              ×
+              CLOSE
             </button>
-
 
             <div className="modal-image">
 
@@ -916,7 +815,6 @@ ${formData.message}`;
               />
 
             </div>
-
 
             <div className="modal-content">
 
@@ -940,46 +838,55 @@ ${formData.message}`;
 
               </div>
 
-
               <p className="modal-price">
                 {selectedVehicle.price}
               </p>
-
 
               <div className="modal-specs">
 
                 <div>
                   <small>YEAR</small>
-                  <strong>{selectedVehicle.year}</strong>
+                  <strong>
+                    {selectedVehicle.year}
+                  </strong>
                 </div>
 
                 <div>
                   <small>MILEAGE</small>
-                  <strong>{selectedVehicle.mileage}</strong>
+                  <strong>
+                    {selectedVehicle.mileage}
+                  </strong>
                 </div>
 
                 <div>
                   <small>ENGINE</small>
-                  <strong>{selectedVehicle.engine}</strong>
+                  <strong>
+                    {selectedVehicle.engine}
+                  </strong>
                 </div>
 
                 <div>
                   <small>TRANSMISSION</small>
-                  <strong>{selectedVehicle.transmission}</strong>
+                  <strong>
+                    {selectedVehicle.transmission}
+                  </strong>
                 </div>
 
                 <div>
                   <small>FUEL</small>
-                  <strong>{selectedVehicle.fuel}</strong>
+                  <strong>
+                    {selectedVehicle.fuel}
+                  </strong>
                 </div>
 
                 <div>
                   <small>SEATING</small>
-                  <strong>{selectedVehicle.seats}</strong>
+                  <strong>
+                    {selectedVehicle.seats}
+                  </strong>
                 </div>
 
               </div>
-
 
               <div className="modal-actions">
 
@@ -997,7 +904,7 @@ ${formData.message}`;
                     sendWhatsAppEnquiry(selectedVehicle)
                   }
                 >
-                  WHATSAPP ENQUIRY →
+                  WHATSAPP ENQUIRY
                 </button>
 
                 <button
@@ -1007,17 +914,14 @@ ${formData.message}`;
                     handleVehicleEnquiry(selectedVehicle)
                   }
                 >
-                  FULL ENQUIRY FORM →
+                  FULL ENQUIRY FORM
                 </button>
 
               </div>
 
             </div>
-
           </div>
-
         </div>
-
       )}
 
     </div>
